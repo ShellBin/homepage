@@ -1,18 +1,86 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div class="info">
+      <AvatarContainer />
+      <FooterInfo class="desktop-footer" />
+    </div>
+    <div class="main-panel">
+      <BentoLinks/>
+    </div>
+    <FooterInfo class="mobile-footer" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+import AvatarContainer from '@/components/AvatarContainer.vue'
+import BentoLinks from '@/components/BentoLinks.vue'
+import FooterInfo from '@/components/FooterInfo.vue'
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-    HelloWorld
+    AvatarContainer, BentoLinks, FooterInfo
   }
 })
 </script>
+
+<style scoped lang="scss">
+.home {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 4rem;
+  min-width: 400px;
+}
+
+.main-panel {
+  margin: 4rem;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.desktop-footer {
+  margin-left: 1rem;
+}
+
+.mobile-footer {
+  margin-bottom: 2rem;
+  display: none;
+}
+
+@media (max-width: 1300px) {
+
+  /* styles for mobile devices */
+  .desktop-footer {
+    display: none;
+  }
+
+  .mobile-footer {
+    display: block;
+  }
+
+  .home {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .info {
+    margin-bottom: 2rem;
+  }
+
+  .main-panel {
+    height: 100%;
+    width: 50vw;
+    min-width: 400px;
+    margin: 0 0 2rem;
+  }
+}
+</style>

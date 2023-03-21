@@ -7,19 +7,27 @@ const routes: Array<RouteRecordRaw> = [
     name: 'home',
     component: HomeView
   },
+
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue'),
+    meta: {
+      title: '关于'
+    }
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+// navigation-guards to update title
+const defaultTitle = 'ShellBin'
+router.beforeEach((to, from, next) => {
+  document.title = (to.meta.title as string) || defaultTitle
+  next()
 })
 
 export default router

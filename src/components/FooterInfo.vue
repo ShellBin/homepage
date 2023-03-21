@@ -1,0 +1,25 @@
+<template>
+    <div class="footer-info">
+        <span>什么样的魔法技巧我都会！</span>
+        <span>© 2013-{{new Date().getFullYear()}} ShellBin. All rights reserved.</span>
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'FooterInfo'
+})
+</script>
+
+<style scoped lang="scss">
+.footer-info {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        display: block;
+    }
+}
+</style>
