@@ -1,6 +1,6 @@
 <template>
   <div class="avatar-container">
-    <img class="avatar" alt="avatar" src="../assets/avatar.jpg">
+    <img class="avatar" alt="avatar" src="@/assets/avatar.jpg">
     <div class="info">
       <p class="name">ShellBin</p>
       <p class="bio">A computer-loving person who enjoys everything.</p>
@@ -19,7 +19,7 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .avatar {
-  width: 185px;
+  width: 11.5rem;
   border-radius: 50%;
 }
 
@@ -40,15 +40,15 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 82rem) {
 
   /* styles for mobile devices */
   .avatar {
-    width: 150px;
+    width: 9.35rem;
   }
 
   .info {
-    max-width: min(500px, 100%);
+    max-width: min(31.25rem, 100%);
 
     .name {
       font-size: 2rem;

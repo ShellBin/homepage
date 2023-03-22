@@ -13,9 +13,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import AvatarContainer from '@/components/AvatarContainer.vue'
-import BentoLinks from '@/components/BentoLinks.vue'
-import FooterInfo from '@/components/FooterInfo.vue'
+import AvatarContainer from '@/components/HomeView/AvatarContainer.vue'
+import BentoLinks from '@/components/HomeView/BentoLinks.vue'
+import FooterInfo from '@/components/HomeView/FooterInfo.vue'
 
 export default defineComponent({
   name: 'HomeView',
@@ -37,13 +37,12 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   margin: 4rem;
-  min-width: 400px;
+  min-width: 25rem;
 }
 
 .main-panel {
   margin: 4rem;
   width: 100%;
-  background-color: aquamarine;
 }
 
 .desktop-footer {
@@ -55,7 +54,7 @@ export default defineComponent({
   display: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 82rem) {
 
   /* styles for mobile devices */
   .desktop-footer {
@@ -79,7 +78,7 @@ export default defineComponent({
   .main-panel {
     height: 100%;
     width: 50vw;
-    min-width: 400px;
+    min-width: 25rem;
     margin: 0 0 2rem;
   }
 }
