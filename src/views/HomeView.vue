@@ -29,7 +29,6 @@ export default defineComponent({
 .home {
   display: flex;
   justify-content: space-between;
-  height: 100%;
 }
 
 .info {
@@ -37,11 +36,14 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   margin: 4rem;
-  min-width: 25rem;
+  min-width: 30rem;
+  position: fixed;
+  // height: -webkit-fill-available;
+  height: calc(100% - 4rem * 2);
 }
 
 .main-panel {
-  margin: 4rem;
+  margin: 4rem 4rem 4rem 40rem;
   width: 100%;
 }
 
@@ -63,6 +65,7 @@ export default defineComponent({
 
   .mobile-footer {
     display: block;
+    padding-bottom: 2rem;
   }
 
   .home {
@@ -73,13 +76,17 @@ export default defineComponent({
 
   .info {
     margin-bottom: 2rem;
+    position: relative;
+    min-width: auto;
   }
 
   .main-panel {
-    height: 100%;
-    width: 50vw;
-    min-width: 25rem;
+    // height: 100%;
+    width: 30vw;
+    min-width: 18rem;
+    max-width: 25rem;
     margin: 0 0 2rem;
+    overflow-y: visible;
   }
 }
 </style>

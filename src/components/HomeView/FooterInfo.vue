@@ -1,6 +1,7 @@
 <template>
     <div class="footer-info">
-        <span>什么样的魔法技巧我都会！</span>
+        <span>什么样的魔法技巧我全都会！</span>
+         <span>Visual design by bento.me</span>
         <span>© 2013-{{new Date().getFullYear()}} ShellBin. All rights reserved.</span>
     </div>
 </template>
@@ -20,6 +21,7 @@ export default defineComponent({
 
     span {
         display: block;
+        color: #616161;
     }
 }
 </style>

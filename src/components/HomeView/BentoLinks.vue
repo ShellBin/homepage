@@ -1,17 +1,13 @@
 <template>
     <div class="bento">
-      <!-- <h1>There are Bento here</h1> -->
-      <div class="twitter"></div>
-      <div class="twitter"></div>
-      <div class="twitter"></div>
-      <div class="twitter"></div>
-      <div class="twitter"></div>
-      <div class="twitter"></div>
-      <div class="twitter"></div>
+      <div class="bento-row">
+        <div class="twitter"></div>
+        <div class="twitter"></div>
+      </div>
     </div>
 </template>
 <script lang="ts">
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   name: 'BentoLinks',
@@ -19,28 +15,31 @@ export default {
     return {
       twitterData: null
     }
-  },
-
-  mounted () {
-    this.fetchData()
-  },
-
-  methods: {
-    fetchData () {
-      console.log('Test')
-    }
   }
 }
 </script>
 
 <style scoped lang="scss">
 .bento {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, 10rem));
-  grid-gap: 1.5rem;
+  display: flex;
   justify-content: center;
-  max-width: 500rem;
-  flex-grow: 1;
+  justify-items: center;
+  max-width: 100rem;
+}
+
+@media (max-width: 82rem) {
+  .bento {
+
+  }
+}
+
+.bento-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  // margin-bottom: ;
 }
 
 @mixin bento-block {
@@ -51,9 +50,9 @@ export default {
 
 @mixin bento-standard {
   @include bento-block();
-  height: 10vw; width: 10vw;
+  height: 13vw; width: 13vw;
   min-height: 8rem; min-width: 8rem;
-  max-height: 10rem; max-width: 10rem;
+  max-height: 12rem; max-width: 12rem;
 }
 
 @mixin bento-banner {
